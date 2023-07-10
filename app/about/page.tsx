@@ -1,8 +1,5 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import styles from './page.module.scss'
 
-export default function About() {
-  return (
-    <div className={styles.about}>About page</div>
-  )
+export default function About(){
+    return <h1 className={styles.main}>About page</h1>
 }
