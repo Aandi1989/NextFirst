@@ -1,6 +1,9 @@
 import styles from './page.module.scss'
 
-export default function About(){
+export default function About() {
     console.log('its okay')
-    return <h1 className={styles.main}>About page</h1>
+
+    return <div className={styles.main}>
+                <div className={styles.main__container}>About page</div>
+            </div>
 }

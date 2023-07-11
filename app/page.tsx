@@ -8,8 +8,8 @@ export default function Home() {
   
   return (
     <div className={styles.main}>
-      <div className={styles.main__wrapper}> 
-        Main Page
+      <div className={styles.main__container}> 
+        Welcome to NextJS world
       </div>
     </div>
   )

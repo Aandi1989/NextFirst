@@ -1,0 +1,20 @@
+@import '../../app/styles/common.scss';
+
+.header{
+    min-height: 100px;
+    background-color: rgb(40,39,45);
+    color:white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    &__container{
+        @extend %container;
+    }
+    & a{
+        color:white;
+        margin: 0 20px;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
