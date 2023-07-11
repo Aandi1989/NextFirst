@@ -1,2 +1,11 @@
 $mainColor:#3a3a3a;
 $orangeColor:#E89F71;
+
+$maxWidth:900px;
+
+%container {
+    max-width: $maxWidth;
+    margin: 0 auto;
+    padding: 0 15px;
+    
+}

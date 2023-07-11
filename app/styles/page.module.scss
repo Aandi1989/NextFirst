@@ -1,5 +1,12 @@
 @import './common.scss';
 
 .main{
-  color:$mainColor;
+  @extend %container; // расширяем шаблон %container из файла common.scss
+  &__wrapper{
+    color:$mainColor; // применяем переменную из $mainColor из файла common.scss
+  }
 }
+
+
+
+
