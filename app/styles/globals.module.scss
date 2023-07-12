@@ -1,0 +1,20 @@
+@import '../styles/common.scss';
+
+.layoutWrapper{
+    display: grid;
+    grid-template-rows:auto 1fr auto;  
+    height: 100%;
+    overflow: hidden;
+    // border:3px solid green;
+}
+
+.main{
+        @extend %container;
+        font-size: 28px;
+        text-align: center;
+        font-weight: 700;
+        padding:40px 0;
+        width: 100%;
+        // border:1px solid red;
+}
+

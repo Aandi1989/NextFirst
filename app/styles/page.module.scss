@@ -1,16 +1,16 @@
-@import './common.scss';
+// @import './common.scss';
 
-.main{
-  color:$mainColor; // применяем переменную из $mainColor из файла common.scss
-  font-size: 28px;
-  font-weight: 700;
-  text-align: center;
-  padding:40px 0;
+// .main{
+//   color:$mainColor; // применяем переменную из $mainColor из файла common.scss
+//   font-size: 28px;
+//   font-weight: 700;
+//   text-align: center;
+//   padding:40px 0;
   
-    &__container{
-    @extend %container; // расширяем шаблон %container из файла common.scss
-  }
-}
+//     &__container{
+//     @extend %container; // расширяем шаблон %container из файла common.scss
+//   }
+// }
 
 
 
