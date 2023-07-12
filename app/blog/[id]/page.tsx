@@ -1,4 +1,15 @@
 import { Metadata } from "next";
+import styles from './page.module.scss'
+
+async function getData(id: string) {
+  const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`,
+  {
+      next: {
+          revalidate: 60, // запрос на  обновление постов будет происходить на сервере каждые 60 секунд 
+      },
+  })
+  return response.json()
+}
 
 type Props = {
     params: {
@@ -7,17 +18,20 @@ type Props = {
 }
 
 export async function generateMetadata({params:{id}}: Props): Promise<Metadata>{
+  const post = await getData(id);
+
   return{
-    title: id,
+    title: post.title,
   }
 }
 
-const Post = ({params:{id}}: Props) => {
+export default async function Post ({params:{id}}: Props) {
+  const post = await getData(id)
+
   return (
-    <h1>
-       Post page {id}
-    </h1>
+    <>
+       <h1 className={styles.title}>{post.title}</h1>
+       <p className={styles.text}>{post.body}</p>
+    </>
   );
 };
-
-export default Post;
