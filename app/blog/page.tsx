@@ -3,11 +3,13 @@ import styles from './page.module.scss'
 import Link from 'next/link'
 
 async function getData() {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts',{
+    const response = await fetch('https://jsonplaceholder.typicode.com/poss',{
         next: {
             revalidate: 60, // запрос на  обновление постов будет происходить на сервере каждые 60 секунд 
         },
     })
+
+    if(!response.ok) throw new Error("Unable to fetch posts!") // можно самому выбрасывать определенные ошибки, которые отобразятся на странице Error
     return response.json()
 }
 
