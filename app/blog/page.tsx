@@ -1,35 +1,34 @@
-import { Metadata } from 'next'
-import styles from './page.module.scss'
-import Link from 'next/link'
+"use client";
+import { Metadata } from 'next';
+import styles from './page.module.scss';
+import { useEffect, useState } from 'react';
+import { getAllPosts } from '@/services/getPost';
+import Posts from '@/components/Posts/Posts';
+import PostSearch from '@/components/PostSearch/PostSearch';
 
-async function getData() {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts',{
-        next: {
-            revalidate: 60, // запрос на  обновление постов будет происходить на сервере каждые 60 секунд 
-        },
-    })
 
-    if(!response.ok) throw new Error("Unable to fetch posts!") // можно самому выбрасывать определенные ошибки, которые отобразятся на странице Error
-    return response.json()
-}
 
 export const metadata: Metadata = {
     title: 'Blog | Next App',
 }
 
 export default async function Blog() {
-    const posts = await getData()
+    const [posts, setPosts] = useState<any[]>([])
+    const [loading, setLoading] = useState(true)
 
+    useEffect(() => {getAllPosts()
+        .then(setPosts)
+        .finally(() => setLoading(false))}, [])
+        
     return (
         <>
+            {loading ? <h3>Loading...  </h3> : 
+            <> 
             <div>Blog page</div>
-            <ul className={styles.listWrapper}>
-                {posts.map((post:any) => (
-                    <li key={post.id}>
-                        <Link href={`/blog/${post.id}`}>{post.title}</Link>
-                    </li>
-                ))}
-            </ul>
+            <PostSearch onSearch={setPosts}/>
+            <Posts posts={posts}/>
+            </>
+            }
         </>
     )
 
