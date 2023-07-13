@@ -1,22 +1,26 @@
 'use client';
 
+import useSWR from 'swr'
 import Link from 'next/link';
 import styles from './posts.module.scss'
-import { usePosts } from '@/store';
-import { useEffect } from 'react';
-import {shallow} from 'zustand/shallow';
+import { getAllPosts } from '@/services/getPost';
+// import { usePosts } from '@/store';
+// import {shallow} from 'zustand/shallow';
+// import { useEffect } from 'react';
+
 
 
 const Posts = () => {
-  const [posts, loading, getAllPosts] = usePosts(state => [state.posts, state.loading, state.getAllPosts],
-    shallow 
-    ); 
+  const {data: posts, isLoading} = useSWR("posts", getAllPosts);
+  // const [posts, loading, getAllPosts] = usePosts(state => [state.posts, state.loading, state.getAllPosts],
+  //   shallow 
+  //   ); 
 
-    useEffect(() => {
-        getAllPosts();
-    }, [getAllPosts]);
+  //   useEffect(() => {
+  //       getAllPosts();
+  //   }, [getAllPosts]);
         
-  return loading ? ( 
+  return isLoading ? ( 
     <h3 className={styles.loading}>Loading ...</h3>
    ) : (
     <ul className={styles.listWrapper}>
