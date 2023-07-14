@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   }
 
 export default function About() {
-    console.log('its okay')
 
     return  <div className={styles.main}>Select subitem</div>
             
