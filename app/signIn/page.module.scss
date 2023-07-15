@@ -1,0 +1,53 @@
+.signIn {
+    width: 100%;
+    // .signIn__container
+    &__container{
+        width: 200px;
+        margin: 0 auto;
+    }
+    // .signIn__title
+    &__title {
+        margin-bottom: 30px;
+        
+    }
+    // .signIn__btn
+    &__btn {
+    }
+    // .signIn__subtitle
+    &__subtitle {
+        font-weight: normal;
+        font-size: 18px;
+        margin: 15px 0;
+    }
+}
+.btn {
+    background-color: rgb(49,124,198);
+    color:white;
+    width: 100%;
+    height: 35px;
+    font-size: 18px;
+}
+.signIn {
+    // .SignIn__form
+    &__form {
+        
+    }
+}
+.formSignIn {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    // .formSignIn__login, .formSignIn__password
+    &__login,&__password {
+        border:1px solid black;
+        width: 100%;
+        height: 30px;
+        border-radius:3px;
+        margin-bottom: 15px;
+        padding: 0 7px;
+    }
+    // .formSignIn__btn
+    &__btn {
+    }
+}
+
