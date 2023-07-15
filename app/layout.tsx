@@ -1,6 +1,6 @@
 import Header from '@/components/header/Header'
 import './styles/null.scss'
-import styles from './styles/globals.module.scss'
+import './styles/globals.scss'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/footer/Footer'
@@ -24,9 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
        <ReduxProvider>
-       <div className={styles.layoutWrapper}>
+       <div className="layoutWrapper">
             <Header />
-            <main className={styles.main}> {children}</main>
+            <main className="layoutMain"> {children}</main>
             <Footer />
           </div>
        </ReduxProvider>

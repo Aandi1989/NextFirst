@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import styles from './page.module.scss'
+import '../../styles/globals.scss'
 
 async function getData(id: string) {
   const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`,
@@ -30,8 +30,8 @@ export default async function Post ({params:{id}}: Props) {
 
   return (
     <>
-       <h1 className={styles.title}>{post.title}</h1>
-       <p className={styles.text}>{post.body}</p>
+       <h1 className="blogId__title">{post.title}</h1>
+       <p className="blogId__text">{post.body}</p>
     </>
   );
 };

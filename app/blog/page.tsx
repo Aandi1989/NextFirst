@@ -1,7 +1,4 @@
 import { Metadata } from 'next';
-import styles from './page.module.scss';
-import { useEffect } from 'react';
-import { getAllPosts } from '@/services/getPost';
 import Posts from '@/components/Posts/Posts';
 import PostSearch from '@/components/PostSearch/PostSearch';
 

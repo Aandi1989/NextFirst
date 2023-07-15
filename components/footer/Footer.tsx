@@ -1,9 +1,9 @@
-import styles from './footer.module.scss'
+import  './footer.scss'
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footer__container}> Created by & copy</div>
+    <footer className="footer">
+      <div className="footer__container"> Created by & copy</div>
     </footer>
   );
 };

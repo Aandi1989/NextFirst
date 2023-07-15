@@ -2,15 +2,13 @@
 
 import useSWR from "swr";
 import { FormEventHandler, useState } from "react";
-import styles from './PostSearch.module.scss'
-// import { usePosts } from "@/store";
+import './PostSearch.scss'
 import { getPostBySearch } from "@/services/getPost";
 
 
 const PostSearch = () => {
     const {mutate} = useSWR("posts")
     const [search, setSearch] = useState('');
-    // const getPostsBySearch = usePosts(state =>state.getPostsBySearch)
 
     const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
         event.preventDefault();
@@ -18,9 +16,9 @@ const PostSearch = () => {
         mutate(posts)
     }
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-        <input className={styles.form__input} type="search" placeholder="search" value={search} onChange={event => setSearch(event.target.value)}/>
-        <button className={styles.form__button} type="submit">Search</button>
+    <form className="form" onSubmit={handleSubmit}>
+        <input className="form__input" type="search" placeholder="search" value={search} onChange={event => setSearch(event.target.value)}/>
+        <button className="form__button" type="submit">Search</button>
     </form>
   );
 };

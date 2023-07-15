@@ -1,5 +1,4 @@
-import Link from "next/link";
-import styles from './header.module.scss'
+import './header.scss'
 import { Navigation } from "../Navigation/Navigation";
 
 const navItems = [
@@ -11,8 +10,8 @@ const navItems = [
 
 const Header = () => {
   return (
-    <header className={styles.header}>
-      <div className={styles.header__container}>
+    <header className="header">
+      <div className="header__container">
         <Navigation navLinks={navItems}/>
       </div>
     </header>

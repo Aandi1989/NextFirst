@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import styles from './page.module.scss'
+import '../styles/globals.scss'
 
 export const metadata: Metadata = {
     title: 'About | Next App', 
@@ -7,6 +7,6 @@ export const metadata: Metadata = {
 
 export default function About() {
 
-    return  <div className={styles.main}>Select subitem</div>
+    return  <div className="aboutMain">Select subitem</div>
             
 }
