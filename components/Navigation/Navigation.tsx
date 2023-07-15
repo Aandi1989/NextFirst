@@ -13,7 +13,7 @@ type Props = {
 
 const Navigation = ({ navLinks }: Props) => {
     const pathname = usePathname();
-    console.log("🚀 ~ file: Navigation.tsx:16 ~ Navigation ~ pathname:", pathname)
+    // console.log("🚀 ~ file: Navigation.tsx:16 ~ Navigation ~ pathname:", pathname)
     
     return (
         <>{
